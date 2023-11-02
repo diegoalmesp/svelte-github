@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+	color: green;
+	font-family: Monospace;
+}
+
+a {
+	color: lightgreen;
+}
+
+a:hover {
+	text-decoration: underline;
+}
