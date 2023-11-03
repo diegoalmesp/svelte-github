@@ -1,5 +1,6 @@
 <script lang="ts">
   import Input from '$lib/components/Input.svelte'
+  import ReposList from '$lib/components/ReposList.svelte'
   import { getGithubRepoInfo } from '../utils/server'
 
   let search: string = ''
@@ -16,19 +17,7 @@
 {#await repos}
   <p>Loading...</p>
 {:then repos}
-  {#each repos as repo}
-    <div class="flex flex-col justify-center items-center mb-4">
-      <a
-        class="text-green-300 hover:underline font-mono"
-        href={repo.html_url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {repo.name}
-      </a>
-      <p class="text-sm text-gray-500">{repo.description}</p>
-    </div>
-  {/each}
+  <ReposList repos={repos} />
 {:catch error}
   <p>{error.message}</p>
 {/await}
