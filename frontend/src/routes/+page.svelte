@@ -1,5 +1,7 @@
 <script lang="ts">
-  import Input from '../components/Input.svelte'
+  import Input from '$lib/components/Input.svelte'
+  import { getGithubRepoInfo } from '$lib/server'
+
   let search: string = ''
 </script>
 
