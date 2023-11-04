@@ -10,8 +10,7 @@
         <div class="flex gap-2">
           <a
             class="text-green-300 hover:underline font-mono"
-            href={repo.html_url}
-            target="_blank"
+            href={`/contributors?user=${repo.owner.login}&repo=${repo.name}`}
             rel="noopener noreferrer"
           >
             {repo.name} {"::"}
