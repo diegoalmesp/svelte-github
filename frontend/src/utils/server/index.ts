@@ -10,3 +10,11 @@ export async function getGithubRepoInfo(name: string, language = 'typescript', r
 			return data.items;
 		});
 }
+
+export async function getContributorsInfo(user: string, repo: string) {
+	return fetch(`https://api.github.com/repos/${user}/${repo}/contributors`)
+		.then((res) => res.json())
+		.then((data) => {
+			return data;
+		});
+}
